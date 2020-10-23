@@ -34,6 +34,7 @@ public class TimeClient {
                 out.println(userInput);
             }
 
+            // Read in messages from the server and display
             fromServer = in.readLine();
             System.out.println("TimeServer: " + fromServer);
         }

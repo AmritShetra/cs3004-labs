@@ -19,9 +19,9 @@ public class TimeThread extends Thread {
         try {
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            String inputLine, outputLine;
 
             while (true) {
+                // Read in the input from the socket
                 String message = in.readLine();
 
                 if (message.equals("What time is it?")) {
