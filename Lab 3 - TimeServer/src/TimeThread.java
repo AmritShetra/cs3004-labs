@@ -24,12 +24,11 @@ public class TimeThread extends Thread {
                 // Read in the input from the socket
                 String message = in.readLine();
 
-                if (message.equals("What time is it?")) {
-                    String time = LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm"));
-                    out.println(time);
-                } else {
-                    out.println("I only understand \"What time is it?\"");
-                }
+                // TimeState handles message processing
+                TimeState timeState = new TimeState();
+                String response = timeState.getTime(message);
+
+                out.println(response);
             }
         } catch (IOException e) {
             e.printStackTrace();
